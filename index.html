@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gashaw | ICT and Web Design Notes</title>
+<meta name="description" content="Free PDF notes for Grade 10 ICT, Grade 11 ICT and Grade 12 Web Design and Development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10233F; --bg:#F6F8FB; --card:#FFFFFF; --line:#D9DFE8; --muted:#5B6B82;
+  --teal:#0E9F8E; --sun:#F5B700; --code:#0B1A30;
+  --display:"Bricolage Grotesque","Trebuchet MS",Arial,sans-serif;
+  --body:"Source Sans 3",Segoe UI,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--ink:#EAF0F8;--bg:#0B1524;--card:#12223A;--line:#24374F;--muted:#9DB0C8;--code:#050D18}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--body)}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.brand{font:800 20px var(--display);text-decoration:none}
+.brand b{color:var(--teal)}
+nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:600}
+nav a:hover{color:var(--ink)}
+
+.hero{padding:36px 0 28px}
+.tag{display:inline-block;background:var(--code);color:#9FE7DC;font:500 15px ui-monospace,Consolas,monospace;
+  padding:6px 12px;border-radius:6px;margin-bottom:14px}
+.tag i{color:var(--sun);font-style:normal}
+h1{font:800 clamp(44px,9vw,84px)/0.98 var(--display);margin:0 0 16px;letter-spacing:-0.02em}
+.hero p{max-width:34em;color:var(--muted);font-size:19px;margin:0 0 24px}
+.search{width:100%;max-width:460px;padding:14px 16px;border:2px solid var(--line);border-radius:10px;
+  background:var(--card);color:var(--ink);font:inherit}
+.search:focus{outline:3px solid var(--teal);border-color:var(--teal)}
+
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:30px 0 18px}
+.tab{cursor:pointer;border:2px solid var(--line);background:var(--card);color:var(--ink);
+  padding:11px 18px;border-radius:999px;font:600 16px var(--body)}
+.tab:hover{border-color:var(--teal)}
+.tab:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.desc{color:var(--muted);margin:0 0 16px}
+
+.list{list-style:none;margin:0 0 56px;padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card)}
+.item{display:flex;align-items:center;gap:16px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+.badge{flex:none;width:46px;height:46px;border-radius:10px;display:grid;place-items:center;
+  font:800 12px var(--display);background:#FDECEC;color:#C0392B}
+.badge.doc{background:#E7F0FD;color:#2A62C9}
+.badge.ppt{background:#FFF1DC;color:#B96A00}
+.badge.zip{background:#EAF7EC;color:#2E7D32}
+.info{flex:1;min-width:0}
+.info h3{margin:0;font:600 18px var(--body)}
+.info span{color:var(--muted);font-size:14px}
+.btn{flex:none;text-decoration:none;background:var(--teal);color:#fff;font-weight:600;padding:10px 16px;border-radius:8px}
+.btn:hover{filter:brightness(1.1)}
+.btn:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.empty{padding:28px;text-align:center;color:var(--muted)}
+
+.about{border-top:1px solid var(--line);padding:36px 0 56px;display:grid;gap:10px}
+.about h2{font:800 28px var(--display);margin:0}
+.about p{margin:0;max-width:40em;color:var(--muted)}
+footer{background:var(--code);color:#B9C7DB;padding:22px 0;font-size:15px}
+footer a{color:var(--sun)}
+@media(max-width:560px){
+  nav{display:none}
+  .item{flex-wrap:wrap}
+  .btn{width:100%;text-align:center}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero .tag{animation:blink 1s steps(2) 3}
+  @keyframes blink{50%{opacity:.35}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#">Gashaw<b>.</b></a>
+    <nav><a href="#notes">Notes</a><a href="#about">About</a></nav>
+  </header>
+
+  <section class="hero">
+    <div class="tag">&lt;teacher <i>subject</i>="ICT, Web Design"&gt;</div>
+    <h1>Gashaw</h1>
+    <p>Free PDF notes for Grade 10 ICT, Grade 11 ICT and Grade 12 Web Design and Development. Pick your grade, then download from your phone or computer.</p>
+    <input id="q" class="search" type="search" placeholder="Search notes, for example HTML" aria-label="Search notes">
+  </section>
+
+  <main id="notes">
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <p class="desc" id="desc"></p>
+    <ul class="list" id="list"></ul>
+  </main>
+
+  <section class="about" id="about">
+    <h2>About this site</h2>
+    <p>Notes, exercises and extra material from Gashaw for students who cannot always be in class. Download what you need and study at your own pace.</p>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    Questions? Contact your teacher on <a href="https://t.me/YOUR_TELEGRAM">Telegram</a>
+    or <a href="mailto:YOUR_EMAIL@example.com">email</a>. &copy; <span id="y"></span> Gashaw
+  </div>
+</footer>
+
+<script>
+/* ===== EDIT HERE: add your own files =====
+   file: path to the file inside the "notes" folder, OR a full link (Google Drive etc.)
+   type: pdf | doc | ppt | zip   size: text shown to students (optional)  */
+const GRADES = [
+  { id:"g10", name:"Grade 10 ICT", desc:"Introduction to computers, software, networks and safe use of technology.",
+    files:[
+      { title:"Unit 1: Introduction to ICT", type:"pdf", size:"PDF", file:"notes/grade10/unit1.pdf" },
+      { title:"Unit 2: Computer hardware", type:"pdf", size:"PDF", file:"notes/grade10/unit2.pdf" },
+      { title:"Unit 3: Word processing", type:"pdf", size:"PDF", file:"notes/grade10/unit3.pdf" },
+      { title:"Practice worksheet", type:"doc", size:"Word", file:"notes/grade10/worksheet.docx" }
+    ]},
+  { id:"g11", name:"Grade 11 ICT", desc:"Spreadsheets, databases, networking and problem solving.",
+    files:[
+      { title:"Unit 1: Spreadsheets", type:"pdf", size:"PDF", file:"notes/grade11/unit1.pdf" },
+      { title:"Unit 2: Databases", type:"pdf", size:"PDF", file:"notes/grade11/unit2.pdf" },
+      { title:"Unit 3: Networking", type:"pdf", size:"PDF", file:"notes/grade11/unit3.pdf" }
+    ]},
+  { id:"g12", name:"Grade 12 Web Design", desc:"HTML, CSS, JavaScript and publishing your own website.",
+    files:[
+      { title:"Unit 1: HTML basics", type:"pdf", size:"PDF", file:"notes/grade12/html.pdf" },
+      { title:"Unit 2: CSS styling", type:"pdf", size:"PDF", file:"notes/grade12/css.pdf" },
+      { title:"Unit 3: JavaScript basics", type:"pdf", size:"PDF", file:"notes/grade12/javascript.pdf" },
+      { title:"Sample project files", type:"zip", size:"ZIP", file:"notes/grade12/project.zip" }
+    ]}
+];
+
+let current = GRADES[0].id;
+const $ = id => document.getElementById(id);
+
+function renderTabs(){
+  $("tabs").innerHTML = "";
+  GRADES.forEach(g=>{
+    const b = document.createElement("button");
+    b.className = "tab"; b.type = "button"; b.setAttribute("role","tab");
+    b.setAttribute("aria-selected", g.id === current);
+    b.textContent = g.name;
+    b.onclick = ()=>{ current = g.id; $("q").value = ""; render(); };
+    $("tabs").appendChild(b);
+  });
+}
+
+function render(){
+  renderTabs();
+  const q = $("q").value.trim().toLowerCase();
+  const groups = q ? GRADES : GRADES.filter(g=>g.id===current);
+  $("desc").textContent = q ? "Search results from all grades" : GRADES.find(g=>g.id===current).desc;
+  const list = $("list"); list.innerHTML = "";
+  let n = 0;
+  groups.forEach(g=>g.files.forEach(f=>{
+    if(q && !(f.title+" "+g.name).toLowerCase().includes(q)) return;
+    n++;
+    const li = document.createElement("li"); li.className = "item";
+    const label = f.type.toUpperCase();
+    li.innerHTML = '<div class="badge '+f.type+'">'+label+'</div>'+
+      '<div class="info"><h3></h3><span></span></div>'+
+      '<a class="btn" download>Download</a>';
+    li.querySelector("h3").textContent = f.title;
+    li.querySelector("span").textContent = g.name + (f.size ? " - " + f.size : "");
+    const a = li.querySelector("a"); a.href = f.file;
+    if(/^https?:/.test(f.file)) { a.target = "_blank"; a.rel = "noopener"; a.removeAttribute("download"); }
+    list.appendChild(li);
+  }));
+  if(!n) list.innerHTML = '<li class="empty">No notes found. Try a different word or choose a grade above.</li>';
+}
+
+$("q").addEventListener("input", render);
+$("y").textContent = new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
